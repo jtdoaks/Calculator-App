@@ -1,40 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
 </head>
+
 <body>
-    
-    <div class="container">
+
+    <div class="app">
         <p>
-          This component works exactly like the calculator you know. Click any number to start calculating!
+            This component works exactly like the calculator you know. Click any number to start calculating!
         </p>
         <div class="calculator">
-          <div class="calculator__display">0</div>
-    
-          <div class="calculator__keys">
-            <button class="key--operator" data-action="add">+</button>
-            <button class="key--operator" data-action="subtract">-</button>
-            <button class="key--operator" data-action="multiply">&times;</button>
-            <button class="key--operator" data-action="divide">÷</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>0</button>
-            <button data-action="decimal">.</button>
-            <button data-action="clear">AC</button>
-            <button class="key--equal" data-action="calculate">=</button>
-          </div>
+            <div class="display">0
+                <div class="content">
+                    <div class="input"></div>
+                    <div class="output"></div>
+                </div>
+            </div>
+
+            <div class="keys">
+
+                <div data-key="clear" class="key action">
+                    <span>AC</span>
+                </div>
+                <div data-key="parentheses" class="key action">
+                    <span>()</span>
+                </div>
+                <div data-key="percentage" class="key action">
+                    <span>%</span>
+                </div>
+                <div data-key="divide" class="key action">
+                    <span>/</span>
+                </div>
+                <div data-key="seven" class="key action">
+                    <span>7</span>
+                </div>
+                <div data-key="eight" class="key action">
+                    <span>8</span>
+                </div>
+                <div data-key="nine" class="key action">
+                    <span>9</span>
+                </div>
+                <div data-key="multiply" class="key action">
+                    <span>x</span>
+                </div>
+                <div data-key="four" class="key action">
+                    <span>4</span>
+                </div>
+                <div data-key="five" class="key action">
+                    <span>5</span>
+                </div>
+                <div data-key="six" class="key action">
+                    <span>6</span>
+                </div>
+                <div data-key="subtract" class="key action">
+                    <span>-</span>
+                </div>
+                <div data-key="one" class="key action">
+                    <span>1</span>
+                </div>
+                <div data-key="two" class="key action">
+                    <span>2</span>
+                </div>
+                <div data-key="three" class="key action">
+                    <span>3</span>
+                </div>
+                <div data-key="add" class="key action">
+                    <span>+</span>
+                </div>
+                <div data-key="backspace" class="key action">
+                    <span><</span>
+                </div>
+                <div data-key="zero" class="key action">
+                    <span>0</span>
+                </div>
+                <div data-key="decimal" class="key action">
+                    <span>.</span>
+                </div>
+                <div data-key="calculate" class="key action">
+                    <span>=</span>
+                </div>
+
+
+            </div>
         </div>
-      </div>
+    </div>
+
+    <script src="main.js"></script>
 </body>
+
 </html>
