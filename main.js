@@ -1,8 +1,9 @@
-const calculator = document.querySelector('.calculator')
-const keys = document.querySelector('.keys')
+const keys = document.querySelectorAll('key');
+const display_input = document.querySelector('.display.input');
+const display_output = document.querySelector('.display.output');
 
-keys.addEventListener('click', e => {
-    if (e.target.matches('button')){
-        
-    }
-})
+let input = "";
+
+for (let key of keys) {
+    const value = key.dataset.key;
+}
