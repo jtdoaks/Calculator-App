@@ -42,8 +42,11 @@ for (let key of keys) {
             displayInput.innerHTML = cleanInput (input);
 
         } else {
-            input += value;
-            displayInput.innerHTML = cleanInput (input);
+            if (validateInput(value)){
+
+                input += value;
+                displayInput.innerHTML = cleanInput (input);
+            }
 
         }
 
@@ -97,4 +100,24 @@ function cleanOutput (output) {
     }
 
     return outputArray.join("");
+}
+
+function validateInput (value) {
+    
+    let lastInput = input.slice(-1);
+    let operators = ["+", "-", "*", "/"];
+
+    if (value == "." && lastInput == ".") {
+        return false;
+    }
+
+    if (operators.includes(value)) {
+        if (operators.includes(lastInput)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    return true;
 }
