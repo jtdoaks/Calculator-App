@@ -1,6 +1,6 @@
 const keys = document.querySelectorAll('.key');
-const display_input = document.querySelector('.display .input');
-const display_output = document.querySelector('.display .output');
+const displayInput = document.querySelector('.display .input');
+const displayOutput = document.querySelector('.display .output');
 
 let input = "";
 
@@ -11,18 +11,18 @@ for (let key of keys) {
 
         if (value == "clear") {
             input = "";
-            display_input.innerHTML = "";
-            display_output.innerHTML = "";
+            displayInput.innerHTML = "";
+            displayOutput.innerHTML = "";
             console.log("AC")
 
         } else if (value == "backspace") {
             input = input.slice(0, -1);
-            display_input.innerHTML = input;
+            displayInput.innerHTML = cleanInput (input);
             console.log("backspace")
 
         } else if (value == "=") {
             let result = eval(input);
-            display_output.innerHTML = result;
+            displayOutput.innerHTML = cleanOutput (result);
             console.log("equals")
 
         } else if (value === "brackets") {
@@ -39,11 +39,12 @@ for (let key of keys) {
                 input += ")";
             }
 
-            display_input.innerHTML = input;
+            displayInput.innerHTML = cleanInput (input);
 
         } else {
             input += value;
-            display_input.innerHTML = input;
+            displayInput.innerHTML = cleanInput (input);
+
         }
 
     })
@@ -73,4 +74,27 @@ function cleanInput(input) {
         }
     }
     return inputArray.join("");
+}
+
+function cleanOutput (output) {
+    let outputString = output.toString();
+    let decimal = outputString.split(".")[1];
+    outputString = outputString.split(".")[0];
+
+    let outputArray = outputString.split("");
+
+    if (outputArray.length > 3) {
+        for (let i = outputArray.length - 3; i > 0; i -= 3) {
+           outputArray.splice(i,0, ",");
+            
+        }
+    }
+
+    if (decimal ){
+        outputArray.push(".");
+        outputArray.push(decimal);
+
+    }
+
+    return outputArray.join("");
 }
