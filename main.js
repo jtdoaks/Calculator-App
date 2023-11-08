@@ -55,9 +55,22 @@ function cleanInput(input) {
     let inputArray = input.split("");
 
     for (let i = 0; i < inputArray.length; i++) {
-       
+
         if (inputArray[i] == "*") {
             inputArray[i] = `<span class="operator">x</span>`
+        } else if  (inputArray[i] == "/") {
+            inputArray[i] = `<span class="operator">÷</span>`
+        } else if  (inputArray[i] == "+") {
+            inputArray[i] = `<span class="operator">+</span>`
+        } else if  (inputArray[i] == "-") {
+            inputArray[i] = `<span class="operator">-</span>`
+        } else if  (inputArray[i] == "(") {
+            inputArray[i] = `<span class="brackets">(</span>`
+        } else if  (inputArray[i] == ")") {
+            inputArray[i] = `<span class="brackets">)</span>`
+        } else if  (inputArray[i] == "%") {
+            inputArray[i] = `<span class="percent">%</span>`
         }
     }
+    return inputArray.join("");
 }
