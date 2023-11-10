@@ -80,6 +80,16 @@ function cleanInput(input) {
 }
 
 function cleanOutput (output) {
+
+    if (output === 0) {
+        return "0"; // To prevent division by zero
+    }
+
+    
+    if (!isFinite(output)) {
+        return "0"; // To catch infinity and other non-finite results
+    }
+
     let outputString = output.toString();
     let decimal = outputString.split(".")[1];
     outputString = outputString.split(".")[0];
